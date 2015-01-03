@@ -1,0 +1,181 @@
+<html ng-app="Waterapp">
+  <head>
+    <title>Your Water Footprint</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+    <script src="Water_main.js"></script>
+    <script src="angular-dropdowns.js"></script>
+    <link href="setosa.css" rel="stylesheet">
+    <link href="angular-dropdowns.css" rel="stylesheet">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <style>
+
+      evt {
+        padding: 0px 4px 2px 4px;
+        font-weight: bold;
+        color: white;
+        display: inline-block;
+        cursor:pointer;
+      }
+      evt div {
+        border-radius: 5px;
+        padding-left: 4px;
+        padding-right: 4px;
+      }
+  
+      ul
+      {
+      list-style-type: none;
+      }
+      input{
+        text-align: center;
+        line-height: 31.5px;
+        margin-top: -6px;
+
+      }
+
+      input.btn {
+        height: 35px;
+      }
+
+
+      .section-background{
+        bottom: 0;
+      }
+
+      .section-backgroundImage {
+        height: 637px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-size: cover;
+        background-position: center;
+        background-position-x: 50%;
+        background-position-y: 50%;
+      }
+        
+    
+
+    .section-content {
+      padding: 60px 0 60px;
+      position: relative;
+    }
+    .layoutSingleColumn{
+      width: auto;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin: auto;
+      
+    }
+
+    .section-content h1{
+      -webkit-font-smoothing: antialiased;
+      color: #fff;
+      font-size: 4em;
+    }
+
+    .section-content blockquote{
+      -webkit-font-smoothing: antialiased;
+      color: #eee;
+    }
+
+    .visual-content{
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .visual{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .main{
+      width: 800px;
+      margin: auto;
+    }
+
+    </style>
+  </head>
+  <body>
+
+
+<section >
+  <div class="section-background">
+      <div class="section-backgroundImage" style="background-image: url(https://www.colourbox.com/preview/2317302-beautiful-corona-from-transparent-drop-of-water-on-black-background.jpg);">
+      </div>
+      <br>
+  </div>
+  <div class="section-content">
+    <div class="section-inner layoutSingleColumn">
+      <h1 class="title"> 12 Graphics about Your Water Footprint</h1>
+      <p> <br></p>
+      <blockquote >A series of simple questions to inform yourself.</blockquote></div></div>
+
+    <div class="u-tableCell u-ignoreBlock">
+      <div class="section-aspectRatioViewportCropPlaceholder u-ignoreBlock">
+        <div class="u-ignoreBlock" style="padding-bottom: 35%;">
+          
+        </div>
+      </div>
+    </div>
+ 
+</section>
+
+  <section class="title main">
+      <div class="title-region">
+        <h1 class="title">Your Water Footprint</h1>
+        <h3 class="by-line">Explained Visually</h3>
+        <p>By <a href="https://www.linkedin.com/pub/michael-taptich/21/263/b28/">Mike Taptich</a>, <a href="https://www.linkedin.com/pub/thomas-hendrickson/21/239/7a5">Thomas Hendrickson</a>, <a href="https://www.linkedin.com/pub/kelly-archer/97/27/a16">Kelly Archer</a>, and <a href="https://www.linkedin.com/pub/jennifer-stokes/1/655/8b0">Jennifer Stokes Draut</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="main">
+  
+
+  <p> About 30 percent of the contiguous  <a href="http://www.nytimes.com/interactive/2014/upshot/mapping-the-spread-of-drought-across-the-us.html" target="_blank">United States</a> was in at least a moderate drought as of December 16. Conditions seem to be particularly bad in California.  The state's last 36 months were the hottest and driest in the 119-year instramental record.</p> 
+ 
+  <p>To gain a sense of how the <a href="https://twitter.com/hashtag/cadrought?src=hash" target="_blank">#cadrought</a> has impacted water supplies across the state, one can quickly glance at reservoir levels: </p>
+
+  <div class="visual-content">
+    <div class="visual">
+      <p><iframe src="http://vicapow.github.io/water-supply/public/map.html" width="640" height="720" frameborder="0" scrolling="no"></iframe></p>
+      <h5>Data source: <a href="http://cdec.water.ca.gov/cgi-progs/reservoirs/RES" target="_blank">California Department of Water Resources</a> </h5>
+    </div>
+  </div>
+
+  <p>Accordingly, many water utilities have asked their customers to cut their water usage in an effort to conserve the state's limited resource. In the Bay Area, for instance, the <a href="http://www.nbcbayarea.com/news/local/EBMUD-Considers-14-Fee-Hike-15-Water-Reduction-285226311.html" target="_blank">East Bay Municipal Utility District</a> has called for a 15% reduction in water usage, or about 37 gallons per day conserved. By best estimates, it will take at least months of above-normal rain to end this drought.  </p>
+  <br>
+  <h2> <em>So, what can <b>you</b> do to reduce your water footprint in these notably dry times? </em></h2>
+  <br>
+
+  <p>Well, you should begin your conservation efforts by breaking this particular question down into three major parts:
+
+  <ol style="font-size: 20px; margin-top: 20px;">
+    <li>How much water do I directly consume and use?</li>
+    <br>
+    <li>How much water is embedded in the products I consume and use?</li>
+    <br>
+    <li>How much water is embedded in the energy I use?</li>
+  </ol>
+
+  </p>
+</section>
+ 
+  
+  <hr>
+  <section>
+    <p><em>Mike Taptich is a PhD student in the Energy, Civil Infrastructure, and Climate program at UC Berkeley.  He is also a co-founder of the <a href="http://vudlab.com/#/" target="_blank">Visualizing Urban Data Idealab</a>.</em></p>
+
+    <p><em>Thomas Hendrickson is a Postdoctoral Researcher in Civil and Environment Engineering at UC Berkeley. He is interested in creating and communicating valuable results for decision-makers is a priority in his research. All of the visuals used in our <a href="" target="_blank">infographics</a> were developed by him.</em></p>
+
+    <p><em>Kelly Archer is an undergraduate student at UC Berkeley.  She recently received the <a href="http://www.iie.org/programs/gilman-scholarship-programBenjamin" target="_blank"> A. Gilman International Scholarship</a>, which aims to diversify the kinds of students who study and intern abroad.</em></p>
+  </section>
+   
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
