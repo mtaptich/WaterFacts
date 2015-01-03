@@ -5,6 +5,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
     <script src="Water_main.js"></script>
     <script src="angular-dropdowns.js"></script>
     <link href="setosa.css" rel="stylesheet">
@@ -95,6 +96,24 @@
     .main{
       width: 800px;
       margin: auto;
+      text-align: justify;
+    }
+
+   
+
+    .popover {
+      max-width: 550px;
+      width: 550px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .popover p{
+      font-size: 18px;
+      line-height: 20px;
+      padding-left: 20px; 
+      padding-right: 20px;
+      padding-bottom: 10px;
+      text-align: justify;
     }
 
     </style>
@@ -138,6 +157,7 @@
 
   <p> About 30 percent of the contiguous  <a href="http://www.nytimes.com/interactive/2014/upshot/mapping-the-spread-of-drought-across-the-us.html" target="_blank">United States</a> was in at least a moderate drought as of December 16. Conditions seem to be particularly bad in California.  The state's last 36 months were the hottest and driest in the 119-year instramental record.</p> 
  
+ <!--
   <p>To gain a sense of how the <a href="https://twitter.com/hashtag/cadrought?src=hash" target="_blank">#cadrought</a> has impacted water supplies across the state, one can quickly glance at reservoir levels: </p>
 
   <div class="visual-content">
@@ -146,36 +166,51 @@
       <h5>Data source: <a href="http://cdec.water.ca.gov/cgi-progs/reservoirs/RES" target="_blank">California Department of Water Resources</a> </h5>
     </div>
   </div>
+  -->
 
   <p>Accordingly, many water utilities have asked their customers to cut their water usage in an effort to conserve the state's limited resource. In the Bay Area, for instance, the <a href="http://www.nbcbayarea.com/news/local/EBMUD-Considers-14-Fee-Hike-15-Water-Reduction-285226311.html" target="_blank">East Bay Municipal Utility District</a> has called for a 15% reduction in water usage, or about 37 gallons per day conserved. By best estimates, it will take at least months of above-normal rain to end this drought.  </p>
+
+  <br>
+  <hr>
   <br>
   <h2> <em>So, what can <b>you</b> do to reduce your water footprint in these notably dry times? </em></h2>
-  <br>
+  
 
   <p>Well, you should begin your conservation efforts by breaking this particular question down into three major parts:
 
   <ol style="font-size: 20px; margin-top: 20px;">
     <li>How much water do I directly consume and use?</li>
-    <br>
+
     <li>How much water is embedded in the products I consume and use?</li>
-    <br>
+    
     <li>How much water is embedded in the energy I use?</li>
   </ol>
-
   </p>
+
+  <p> Though often forgotten, the last two questions are very important for truly reducing the total amount of water you use daily. It is easy to monitor the amount of water you directy consume and use. All you would need is a volumetric measuring device (e.g., a measuring cup) and you are good to go. However, for the last two questions, you need a more scientific approach for this accounting. </p>
+
+  <p>Water resource engineers and scientists will employ a <a href="http://www.epa.gov/sustainability/analytics/life-cycle.htm" target="_blank" popover-placement="top" popover-html-unsafe="According to <b>Environmental Protection Agency</b>,<br> <p>Life-cycle assessment (LCA) is a systems-based approach to quantifying the human health and environmental impacts associated with a product's life from <em>cradle to grave</em>. A full LCA addresses all stages of the product life-cycle and should take into account alternative uses as well as associated waste streams, raw material extraction, material transport and processing, product manufacturing, distribution and use, repair and maintenance, and wastes or emissions associated with a product, process, or service as well as end-of-life disposal, reuse, or recycling.</p> "><evt label="life-cycle assessment" bg="#2966C0"></evt></a> or LCA to estimate the total water demand for a produce, service, or infrastructure system. LCAs are extremely time and data intesive, however offer many useful pieces of information for choosing between different alternatives.  
+  </p>
+
+  <p> In the following infographics, we show the results of a water LCA for average Californians.</p>
+
+
+  
 </section>
  
   
   <hr>
-  <section>
+  <section class="main">
     <p><em>Mike Taptich is a PhD student in the Energy, Civil Infrastructure, and Climate program at UC Berkeley.  He is also a co-founder of the <a href="http://vudlab.com/#/" target="_blank">Visualizing Urban Data Idealab</a>.</em></p>
 
     <p><em>Thomas Hendrickson is a Postdoctoral Researcher in Civil and Environment Engineering at UC Berkeley. He is interested in creating and communicating valuable results for decision-makers is a priority in his research. All of the visuals used in our <a href="" target="_blank">infographics</a> were developed by him.</em></p>
 
     <p><em>Kelly Archer is an undergraduate student at UC Berkeley.  She recently received the <a href="http://www.iie.org/programs/gilman-scholarship-programBenjamin" target="_blank"> A. Gilman International Scholarship</a>, which aims to diversify the kinds of students who study and intern abroad.</em></p>
+
   </section>
    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
   </body>
 </html>

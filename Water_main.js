@@ -1,4 +1,4 @@
-var app = angular.module('Waterapp', ['ngDropdowns'])
+var app = angular.module('Waterapp', ['ngDropdowns', 'ui.bootstrap'])
 
 // Text environment function
 app.directive('evt', function() {
@@ -28,4 +28,16 @@ app.directive('backImg', function(){
     };
 });
 
+app.directive("popoverHtmlUnsafePopup", function () {
+      return {
+        restrict: "EA",
+        replace: true,
+        scope: { title: "@", content: "@", placement: "@", animation: "&", isOpen: "&" },
+        templateUrl: "popover-html-unsafe-popup.html"
+      };
+    })
+
+    .directive("popoverHtmlUnsafe", [ "$tooltip", function ($tooltip) {
+      return $tooltip("popoverHtmlUnsafe", "popover", "mouseenter");
+    }]);
 
