@@ -19,12 +19,15 @@
         color: white;
         display: inline-block;
         cursor:pointer;
+        line-height: 28px;
       }
       evt div {
         border-radius: 5px;
         padding-left: 4px;
         padding-right: 4px;
+        vertical-align: text-bottom;
       }
+
   
       ul
       {
@@ -121,11 +124,11 @@
       max-width: 800px;;
     }
 
-    .questionbox {
+    .well {
       width: 100%;
     }
 
-    .questionbox img{
+    .well img{
       margin-bottom: 40px;
     }
 
@@ -138,6 +141,79 @@
       display: table;
       margin: 0 auto;
     }
+
+    blockquote{
+      margin-top: -50px;
+    }
+
+    .modal-dialog{
+      width: 700px;
+      margin: auto;
+    }
+
+    .btn {
+  background-color: #1abc9c;
+  border-radius: 6px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  transition: 0.25s background-color;
+  line-height: 1.471;
+  outline: 0;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
+.btn-primary {
+  background-color: #e74c3c;
+}
+.btn-primary:active {
+  background-color: #16a085;
+}
+.btn:hover {
+  background-color: #d62c1a;
+}
+.form-control {
+  height: 46px;
+  padding: 8px 12px;
+  font-size: 15px;
+  line-height: 1.467;
+  color: #34495e;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+  box-shadow: none;
+  background-color: white;
+  display: block;
+  outline: 0;
+}
+
+.modal-backdrop {
+   background-color: #fff;
+}
+
+.modal-backdrop.fade.in{
+  opacity: 0.8;
+}
+
+.twitter-share-button[style] { 
+  vertical-align: text-bottom !important; 
+
+}
+
+hr {
+  margin: 17px 0 18px;
+  height: 0;
+  clear: both;
+  border: solid #ddd;
+  border-width: 1px 0 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #fff;
+}
+
 
     </style>
   </head>
@@ -152,7 +228,7 @@
   </div>
   <div class="section-content">
     <div class="section-inner layoutSingleColumn">
-      <h1 class="title"> 12 Graphics about Your Water Footprint</h1>
+      <h1 class="title"> An Average Californian's and American's Water Footprint</h1>
       <p> <br></p>
       <blockquote >A series of simple questions to inform yourself.</blockquote></div></div>
 
@@ -170,9 +246,12 @@
       <div class="title-region">
         <h1 class="title">Your Water Footprint</h1>
         <h3 class="by-line">Explained Visually</h3>
-        <p>By <a href="https://www.linkedin.com/pub/michael-taptich/21/263/b28/" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/michaeltaptich.jpg">'>Mike Taptich</a>, <a href="https://www.linkedin.com/pub/thomas-hendrickson/21/239/7a5" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/tommyhendrickson.jpg">'>Thomas Hendrickson</a>, <a href="https://www.linkedin.com/pub/kelly-archer/97/27/a16" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/kellyarcher.jpg">'>Kelly Archer</a>, and <a href="https://www.linkedin.com/pub/jennifer-stokes/1/655/8b0" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/renewit.png">'>Jennifer Stokes Draut</a></p>
+        <p style="font-size: 18px"><a href="https://www.linkedin.com/pub/michael-taptich/21/263/b28/" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/michaeltaptich.jpg">'>Mike Taptich</a>, <a href="https://www.linkedin.com/pub/thomas-hendrickson/21/239/7a5" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/tommyhendrickson.jpg">'>Thomas Hendrickson</a>, <a href="https://www.linkedin.com/pub/kelly-archer/97/27/a16" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/kellyarcher.jpg">'>Kelly Archer</a>, <a href="https://www.linkedin.com/pub/jennifer-stokes/1/655/8b0" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/renewit.png">'>Jennifer Stokes Draut</a>, <a href="http://www.ce.berkeley.edu/~horvath/" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/arpadhorvath.jpg">'> Prof. Arpad Horvath</a></p>
+    
         <p>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mtaptich.github.io/WaterFacts/" data-text="12 Graphics about Your Water Footprint" data-via="MikeTaptich" data-hashtags="cadrought">Tweet</a>
+          <span popover-placement="top" popover-html-unsafe="Mouseover to get more info."><evt label="mouseover" bg="#2966C0" ></evt></span>
+          <span popover-placement="top" popover-html-unsafe="Click to see a data visualization."><evt label="click" bg="#e74c3c"></evt></span>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mtaptich.github.io/WaterFacts/" data-text="12 Graphics about Your Water Footprint" data-via="MikeTaptich" data-hashtags="cadrought"  data-size="large">Tweet</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </p>
       </div>
@@ -185,9 +264,18 @@
   <p> About 30 percent of the contiguous  <a href="http://www.nytimes.com/interactive/2014/upshot/mapping-the-spread-of-drought-across-the-us.html" target="_blank">United States</a> was in at least a moderate drought as of December 16. Conditions seem to be particularly bad in California.  The state's last 36 months were the hottest and driest in the 119-year instramental record.</p> 
  
 
-  <p>Accordingly, many water utilities have asked their customers to cut their water usage in an effort to conserve the state's limited resource. In the Bay Area, for instance, the <a href="http://www.nbcbayarea.com/news/local/EBMUD-Considers-14-Fee-Hike-15-Water-Reduction-285226311.html" target="_blank">East Bay Municipal Utility District</a> has called for a 15% reduction in water usage, or about 37 gallons per day conserved. By best estimates, it will take at least months of above-normal rain to end this <a href="http://vicapow.github.io/water-supply/public/map.html" target="_blank" popover-placement="tophttps://github.com/mtaptich/WaterFacts/tree/master/PNGs" popover-html-unsafe='<iframe src="http://vicapow.github.io/water-supply/public/map.html" width="640" height="450" frameborder="0" scrolling="no"></iframe>'><evt label="drought" bg="#2966C0"></evt></a>.  </p>
-
+  <p>Accordingly, many water utilities have asked their customers to cut their water usage in an effort to conserve the state's limited resource. In the Bay Area, for instance, the <a href="http://www.nbcbayarea.com/news/local/EBMUD-Considers-14-Fee-Hike-15-Water-Reduction-285226311.html" target="_blank">East Bay Municipal Utility District</a> has called for a 15% reduction in water usage, or about 37 gallons per day conserved. By best estimates, it will take at least months of above-normal rain to end this <evt label="drought" bg="#e74c3c" onclick="$('#responsive').modal('show')"></evt>.  </p>
   <br>
+  <div class="modal fade" id="responsive">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-body" style="margin-top: -20px; margin-bottom: -10px;">
+            <iframe src="http://vicapow.github.io/water-supply/public/map.html" width="640" height="700" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
   <hr>
   <br>
   <h2> <em>So, what can <b>you</b> do to reduce your water footprint in these notably dry times? </em></h2>
@@ -216,7 +304,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide1.jpg" >
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide1.png" >
       </p>
     </div>
   </div>
@@ -226,7 +314,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide2.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide2.png" ></p>
     </div>
   </div>
 
@@ -235,7 +323,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide3.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide3.png" ></p>
     </div>
   </div>
 
@@ -244,7 +332,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide4.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide4.png" ></p>
     </div>
   </div>
 
@@ -253,7 +341,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide5.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide5.png" ></p>
     </div>
   </div>
 
@@ -262,7 +350,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide6.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide6.png" ></p>
     </div>
   </div>
 
@@ -271,7 +359,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide7.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide7.png" ></p>
     </div>
   </div>
 
@@ -280,7 +368,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide8.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide8.png" ></p>
     </div>
   </div>
 
@@ -289,7 +377,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide9.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide9.png" ></p>
     </div>
   </div>
 
@@ -298,7 +386,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide10.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide10.png" ></p>
     </div>
   </div>
 
@@ -307,7 +395,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide11.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide11.png" ></p>
     </div>
   </div>
 
@@ -316,7 +404,7 @@
     <br>
     <div class='centered'>
       <p>
-      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide12.jpg" ></p>
+      <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide12.png" ></p>
     </div>
   </div>
 
@@ -328,11 +416,13 @@
   <section class="main">
     <p><em>Mike Taptich is a PhD student in the Energy, Civil Infrastructure, and Climate program at UC Berkeley.  He is also a co-founder of the <a href="http://vudlab.com/#/" target="_blank">Visualizing Urban Data Idealab</a>.</em></p>
 
-    <p><em>Thomas Hendrickson is a Postdoctoral Researcher in Civil and Environment Engineering at UC Berkeley. He is interested in creating and communicating valuable results for decision-makers is a priority in his research. All of the visuals used in our <a href="https://github.com/mtaptich/WaterFacts/tree/master/PNGs" target="_blank">infographics</a> were developed by him.</em></p>
+    <p><em>Thomas Hendrickson is a postdoctoral researcher in Civil and Environment Engineering at UC Berkeley. He believed his major research priority is to create and communicate valuable results for decision-makers. All of the visuals used in our <a href="https://github.com/mtaptich/WaterFacts/tree/master/PNGs" target="_blank">infographics</a> were developed by him.</em></p>
 
     <p><em>Kelly Archer is an undergraduate student at UC Berkeley.  She recently received the <a href="http://www.iie.org/programs/gilman-scholarship-programBenjamin" target="_blank"> A. Gilman International Scholarship</a>, which aims to diversify the kinds of students who study and intern abroad.</em></p>
 
-    <p><em>Jennifer Stokes Draut is research engineer at UC Berkeley. </p>
+    <p><em>Jennifer Stokes Draut is a research engineer at UC Berkeley. </p>
+
+    <p><em>Arpad Horvath is a Professor in the Engineering and Project Management Program and in the <a href="http://www.ce.berkeley.edu/programs/ecic" target="_blank">Energy, Civil Infrastructure and Climate Program</a> in the Department of Civil and Environmental Engineering at UC Berkeley. </p>
 
 
 

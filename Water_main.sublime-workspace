@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font-weight"
+			],
+			[
+				"mag",
+				"margin-bottom"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
 				"tran",
 				"transform"
 			],
@@ -28,16 +64,8 @@
 				"veh_list"
 			],
 			[
-				"pa",
-				"payload"
-			],
-			[
 				"ef",
 				"ef_list"
-			],
-			[
-				"fon",
-				"font-weight"
 			],
 			[
 				"mar",
@@ -50,10 +78,6 @@
 			[
 				"gr",
 				"graph"
-			],
-			[
-				"font",
-				"font-size"
 			],
 			[
 				"co",
@@ -162,10 +186,6 @@
 			[
 				"fill",
 				"fill-opacity"
-			],
-			[
-				"text",
-				"textpath"
 			],
 			[
 				"nst",
@@ -363,7 +383,31 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 12818,
+				"buffer_size": 13928,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "setosa.css",
+			"settings":
+			{
+				"buffer_size": 4829,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Water_main.js",
+			"settings":
+			{
+				"buffer_size": 1147,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "popover-html-unsafe-popup.html",
+			"settings":
+			{
+				"buffer_size": 296,
 				"line_ending": "Unix"
 			}
 		}
@@ -401,6 +445,10 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/Mike/Explained_Visually/WaterFacts"
+	],
 	"file_history":
 	[
 		"/Users/Mike/Downloads/gem-v1.0-matlab/drive_cycles/tocsv.py",
@@ -534,7 +582,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -548,6 +596,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"https://raw.githubusercontent.com/mtaptich/WaterFacts/gh-pages/PNGs/Slide",
+			"gh-page",
+			"PNGs/slide",
+			"height:500px; margin-bottom:",
+			"png\" style=\"height:500px; margin-bottom:",
+			".png\" style=\"height:500px; margin-bottom: -50px;\">",
+			"PNGs/slide",
+			"http://www.epa.gov/sustainability/analytics/life-cycle.htm",
+			"attr",
+			"line-height",
+			"ev",
+			"line",
+			"blockquote",
+			"LPapp",
+			"numer",
 			"+d.__weight_size - 2",
 			".attr(\"height\", y.rangeBand()/3);",
 			"y(d.__name) + (+d.__weight_size - 2)*y.rangeBand()/3",
@@ -660,22 +723,7 @@
 			"II',",
 			"\"BUS\": ",
 			"'Bus Euro I+II',",
-			"\"BUS\": ",
-			"'Heavy trucks Euro V',",
-			"\"HDV\":",
-			"2020:{\n\"HDV\": 'Heavy trucks Euro V',\n\"BUS\": 'Bus Euro I+II',\n\"PC\": 'Pass.car diesel with PM filter',\n\"MC\": 'Motorcycles 4-stroke'\n}, ",
-			"makeA",
-			"slide",
-			"invo",
-			"routeid",
-			"empty",
-			"makeA",
-			"sideb",
-			"consol",
-			"main",
-			"down",
-			"sidebar",
-			"payload"
+			"\"BUS\": "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -683,6 +731,14 @@
 		"regex": false,
 		"replace_history":
 		[
+			"https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide",
+			"gh-pages",
+			"https://raw.githubusercontent.com/mtaptich/WaterFacts/gh-page/PNGs/Slide",
+			"height:480px; margin-bottom:",
+			"jpg\" style=\"height:500px; margin-bottom:",
+			".jpg\" style=\"height:500px; margin-bottom: -50px;\">",
+			"img/slide",
+			"",
 			"4 - (+d.__weight_size)",
 			"4 - (+d.__weight_size - 2)",
 			".attr(\"height\", y.rangeBand()/3-1);",
@@ -779,7 +835,7 @@
 		"show_context": true,
 		"use_buffer2": false,
 		"whole_word": false,
-		"wrap": false
+		"wrap": true
 	},
 	"groups":
 	[
@@ -793,15 +849,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12818,
+						"buffer_size": 13928,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								560,
-								560
+								4841,
+								4841
 							]
 						],
 						"settings":
@@ -811,10 +867,98 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1020.0,
+						"translation.y": 2998.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "setosa.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								167,
+								151
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Water_main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1019,
+								1029
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 86.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "popover-html-unsafe-popup.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								296,
+								296
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -862,7 +1006,7 @@
 	"project": "Water_main.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
