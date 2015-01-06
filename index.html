@@ -6,6 +6,7 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&libraries=places&language=en-US"></script>
     <script src="Water_main.js"></script>
     <script src="angular-dropdowns.js"></script>
     <link href="setosa.css" rel="stylesheet">
@@ -146,7 +147,7 @@
       margin-top: -50px;
     }
 
-    .modal-dialog{
+    #responsive .modal-dialog{
       width: 700px;
       margin: auto;
     }
@@ -204,6 +205,7 @@
 
 }
 
+
 hr {
   margin: 17px 0 18px;
   height: 0;
@@ -214,10 +216,18 @@ hr {
   border-bottom: 1px solid #fff;
 }
 
+#map_canvas{
+    width:100%;
+    height: 450px; 
+    border: 1px solid #333335;
+    margin-bottom:20px;
+}
+
+
 
     </style>
   </head>
-  <body>
+  <body >
 
 
 <section >
@@ -246,7 +256,7 @@ hr {
       <div class="title-region">
         <h1 class="title">Your Water Footprint</h1>
         <h3 class="by-line">Explained Visually</h3>
-        <p style="font-size: 18px"><a href="https://www.linkedin.com/pub/michael-taptich/21/263/b28/" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/michaeltaptich.jpg">'>Mike Taptich</a>, <a href="https://www.linkedin.com/pub/thomas-hendrickson/21/239/7a5" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/tommyhendrickson.jpg">'>Thomas Hendrickson</a>, <a href="https://www.linkedin.com/pub/kelly-archer/97/27/a16" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/kellyarcher.jpg">'>Kelly Archer</a>, <a href="https://www.linkedin.com/pub/jennifer-stokes/1/655/8b0" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/renewit.png">'>Jennifer Stokes Draut</a>, <a href="http://www.ce.berkeley.edu/~horvath/" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/arpadhorvath.jpg">'> Prof. Arpad Horvath</a></p>
+        <p style="font-size: 19px"><a href="https://www.linkedin.com/pub/michael-taptich/21/263/b28/" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/michaeltaptich.jpg">'>Mike Taptich</a>, <a href="https://www.linkedin.com/pub/thomas-hendrickson/21/239/7a5" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/tommyhendrickson.jpg">'>Thomas Hendrickson</a>, <a href="https://www.linkedin.com/pub/kelly-archer/97/27/a16" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/kellyarcher.jpg">'>Kelly Archer</a>, <a href="https://www.linkedin.com/pub/jennifer-stokes/1/655/8b0" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/renewit.png">'>Jennifer Stokes </a>, <a href="http://www.ce.berkeley.edu/~horvath/" target="_blank" popover-placement="top" popover-html-unsafe='<img src="img/arpadhorvath.jpg">'> Prof. Arpad Horvath</a></p>
     
         <p>
           <span popover-placement="top" popover-html-unsafe="Mouseover to get more info."><evt label="mouseover" bg="#2966C0" ></evt></span>
@@ -259,12 +269,11 @@ hr {
   </section>
 
   <section class="main">
-  
 
-  <p> About 30 percent of the contiguous  <a href="http://www.nytimes.com/interactive/2014/upshot/mapping-the-spread-of-drought-across-the-us.html" target="_blank">United States</a> was in at least a moderate drought as of December 16. Conditions seem to be particularly bad in California.  The state's last 36 months were the hottest and driest in the 119-year instramental record.</p> 
+  <p> About 30 percent of the contiguous  <a href="http://www.nytimes.com/interactive/2014/upshot/mapping-the-spread-of-drought-across-the-us.html" target="_blank">United States</a> was in at least a moderate drought as of December 16, 2014. Conditions are particularly bad in <evt label="California" bg="#e74c3c" onclick="$('#twitter_modal').modal('show')"></evt>.  The state's last 36 months were the hottest and driest in the 119-year historical record.</p> 
  
 
-  <p>Accordingly, many water utilities have asked their customers to cut their water usage in an effort to conserve the state's limited resource. In the Bay Area, for instance, the <a href="http://www.nbcbayarea.com/news/local/EBMUD-Considers-14-Fee-Hike-15-Water-Reduction-285226311.html" target="_blank">East Bay Municipal Utility District</a> has called for a 15% reduction in water usage, or about 37 gallons per day conserved. By best estimates, it will take at least months of above-normal rain to end this <evt label="drought" bg="#e74c3c" onclick="$('#responsive').modal('show')"></evt>.  </p>
+  <p>Accordingly, many water utilities have asked their customers to cut their water usage in an effort to conserve the state's limited resource. In the Bay Area, for instance, the <a href="http://www.nbcbayarea.com/news/local/EBMUD-Considers-14-Fee-Hike-15-Water-Reduction-285226311.html" target="_blank">East Bay Municipal Utility District</a> has called for a 15% reduction in water usage, or about 37 gallons per day per customet conserved. By best estimates, it will take at least months of above-normal rain to end this <evt label="drought" bg="#e74c3c" onclick="$('#responsive').modal('show')"></evt>.  </p>
   <br>
   <div class="modal fade" id="responsive">
     <div class="modal-dialog">
@@ -273,6 +282,18 @@ hr {
         <div class="modal-body" style="margin-top: -20px; margin-bottom: -10px;">
             <iframe src="http://vicapow.github.io/water-supply/public/map.html" width="640" height="700" frameborder="0" scrolling="no"></iframe>
         </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <div class="modal fade" id="twitter_modal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width:500px;">
+  
+       
+           <a class="twitter-timeline" href="https://twitter.com/hashtag/cadrought" data-widget-id="552297112273453056">#cadrought Tweets</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+     
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
@@ -286,15 +307,15 @@ hr {
   <ol style="font-size: 20px; margin-top: 20px;">
     <li>How much water do I directly consume and use?</li>
 
-    <li>How much water is embedded in the products I consume and use?</li>
+    <li>How much water is needed to produce the resources I consume?</li>
     
-    <li>How much water is embedded in the energy I use?</li>
+    <li>Knowing this, how can I most effectively conserve water??</li>
   </ol>
   </p>
 
   <p> It is easy to monitor the amount of water you directy consume and use and regulate accordingly. Spending less time in the shower, watering your landscape less often, and detecting and fixing leaky faucets are ways to <a href="http://www.epa.gov/greenhomes/ConserveWater.htm" target="_blank">conserve water at home</a>. However, for the last two questions, you need a more scientific approach for this type of 'water accounting.' Though often forgotten, the last these two questions are very important for truly reducing the total amount of water you use daily.</p>
 
-  <p>Water resource engineers and scientists will employ a <a href="http://www.epa.gov/sustainability/analytics/life-cycle.htm" target="_blank" popover-placement="top" popover-html-unsafe="According to the <b>Environmental Protection Agency</b>,<br> <p>Life-cycle assessment (LCA) is a systems-based approach to quantifying the human health and environmental impacts associated with a product's life from <em>cradle to grave</em>. A full LCA addresses all stages of the product life-cycle and should take into account alternative uses as well as associated waste streams, raw material extraction, material transport and processing, product manufacturing, distribution and use, repair and maintenance, and wastes or emissions associated with a product, process, or service as well as end-of-life disposal, reuse, or recycling.</p> "><evt label="life-cycle assessment" bg="#2966C0"></evt></a> or LCA to estimate the total water demand for a produce, service, or infrastructure system. LCAs are extremely time and data intesive, however offer many pieces of information that are useful for choosing between different alternatives.  
+  <p>Water resource engineers and scientists will employ a <a href="http://www.epa.gov/sustainability/analytics/life-cycle.htm" target="_blank" popover-placement="top" popover-html-unsafe="According to the <b>Environmental Protection Agency</b>,<br> <p>Life-cycle assessment (LCA) is a systems-based approach to quantifying the human health and environmental impacts associated with a product's life from <em>cradle to grave</em>. A full LCA addresses all stages of the product life-cycle and should take into account alternative uses as well as associated waste streams, raw material extraction, material transport and processing, product manufacturing, distribution and use, repair and maintenance, and wastes or emissions associated with a product, process, or service as well as end-of-life disposal, reuse, or recycling.</p> "><evt label="life-cycle assessment" bg="#2966C0"></evt></a> or LCA to estimate the total water demand for a produce, service, or infrastructure system. LCA requires the processing of large datasets in generating valuable results to aid in selecting between alternatives. Academics and private companies have utilized LCA for decades in sustainability analyses.   
   </p>
 
   <p> In the following 12 infographics, we show the results of a water LCA for average Californians. </p>
@@ -307,6 +328,13 @@ hr {
       <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide1.png" >
       </p>
     </div>
+    <div>
+      <p>As you can see, most of your water footprint is embedded in the resources you consume!</p>
+       <iframe src="processing/watter_bubble.html" frameborder="" ="0" scrolling="no"  width="720" height="700"></iframe>
+
+      <p> Now, let's explore more about your footprint.</p>
+      <br>
+    </div>
   </div>
 
   <div class="questionbox">
@@ -316,6 +344,8 @@ hr {
       <p>
       <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide2.png" ></p>
     </div>
+    <p> Yes! Meat requires more water than plant-based products.  This makes sense when you consider that animals need vegetables as an input to grow to a healthy size. </p>
+    <br>
   </div>
 
   <div class="questionbox">
@@ -337,7 +367,7 @@ hr {
   </div>
 
   <div class="questionbox">
-    <span class="question">5. Plant-based foods are the least water intesive. What is the water intensity of fruits?</span>
+    <span class="question">5. Plant-based foods are the least water intensive. What is the water intensity of fruits?</span>
     <br>
     <div class='centered'>
       <p>
@@ -346,7 +376,7 @@ hr {
   </div>
 
   <div class="questionbox">
-    <span class="question">6. Is the water I use at my home different from what is used in businesses?</span>
+    <span class="question">6. Is the water I use at my home different from what is used in industry?</span>
     <br>
     <div class='centered'>
       <p>
@@ -355,7 +385,7 @@ hr {
   </div>
 
   <div class="questionbox">
-    <span class="question">7. How much water is used to power my house with electricity? Are their benefits for using renewables?</span>
+    <span class="question">7. How much water is used to power my house with electricity? Are there benefits to using renewables?</span>
     <br>
     <div class='centered'>
       <p>
@@ -373,16 +403,21 @@ hr {
   </div>
 
   <div class="questionbox">
-    <span class="question">9. I know how many miles per gallon my car achieves.  What is the water equivalent?</span>
+    <span class="question">9. I know how many miles per gallon or liter per 100 km my car achieves.  What is the water equivalent?</span>
     <br>
     <div class='centered'>
       <p>
       <img src="https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide9.png" ></p>
     </div>
+
+    <p> To get a sense of scale, let's evaulate a trip by a gasoline-powered automobile in the Bay Area.  Click a start and stop location on the map and see how many liters would be needed per trip. (<b>{{water}} Liters</b> ) </p>
+    <s-l id="map_canvas"></s-l>
+
+    <p>This is just an average for the Bay Area and will differ across the country and world! </p>
   </div>
 
   <div class="questionbox">
-    <span class="question">10. Is there a real differene between being a vegitarian in terms of water usage?</span>
+    <span class="question">10. Is there a real difference between being a vegetarian and a typical omnivore in terms of water usage?</span>
     <br>
     <div class='centered'>
       <p>
@@ -408,19 +443,20 @@ hr {
     </div>
   </div>
 
+
   
 </section>
  
   
   <hr>
   <section class="main">
-    <p><em>Mike Taptich is a PhD student in the Energy, Civil Infrastructure, and Climate program at UC Berkeley.  He is also a co-founder of the <a href="http://vudlab.com/#/" target="_blank">Visualizing Urban Data Idealab</a>.</em></p>
+    <p><em>Mike Taptich is a PhD student in the Energy, Civil Infrastructure, and Climate program at UC Berkeley.  He is also a co-founder of the <a href="http://vudlab.com/#/" target="_blank">Visualizing Urban Data Idealab</a>. All of the interactive data visualizations were developed by him.</em></p>
 
-    <p><em>Thomas Hendrickson is a postdoctoral researcher in Civil and Environment Engineering at UC Berkeley. He believed his major research priority is to create and communicate valuable results for decision-makers. All of the visuals used in our <a href="https://github.com/mtaptich/WaterFacts/tree/master/PNGs" target="_blank">infographics</a> were developed by him.</em></p>
+    <p><em>Thomas Hendrickson, PhD, is a postdoctoral researcher in Civil and Environment Engineering at UC Berkeley. All of the visuals used in our <a href="https://github.com/mtaptich/WaterFacts/tree/master/PNGs" target="_blank">infographics</a> were developed by him.</em></p>
 
     <p><em>Kelly Archer is an undergraduate student at UC Berkeley.  She recently received the <a href="http://www.iie.org/programs/gilman-scholarship-programBenjamin" target="_blank"> A. Gilman International Scholarship</a>, which aims to diversify the kinds of students who study and intern abroad.</em></p>
 
-    <p><em>Jennifer Stokes Draut is a research engineer at UC Berkeley. </p>
+    <p><em>Jennifer Stokes, PhD, is a research engineer in Civil and Environmental Engineering. She did her doctoral research on <a href="http://west.berkeley.edu/" target="_blank">life-cycle analysis of water systems in California</a> and has been studying urban water and energy issues ever since. </p>
 
     <p><em>Arpad Horvath is a Professor in the Engineering and Project Management Program and in the <a href="http://www.ce.berkeley.edu/programs/ecic" target="_blank">Energy, Civil Infrastructure and Climate Program</a> in the Department of Civil and Environmental Engineering at UC Berkeley. </p>
 

@@ -1,0 +1,90 @@
+cat,label,value
+Fruits,Apples,2961.12
+Fruits,Bananas,6137.6
+Fruits,Cantalopes,909.36
+Fruits,Grapes,1460.64
+Fruits,Peaches and Nectarines,1098
+Fruits,Pears,459.65
+Fruits,Pinapples,161.2611
+Fruits,Plums and Prunes,499.2
+Fruits,Strawberries,349.355
+Fruits,Watermelons,1499.04
+Fruits,Grapefruit,207.01
+Fruits,Oranges,726.88
+Vegetables,Asparagus,1323.96
+Vegetables,Broccoli,648.18
+Vegetables,Cabbage,228.39
+Vegetables,Carrots,275.52
+Vegetables,Cauliflower,159.12
+Vegetables,Celery,227.14
+Vegetables,Corn,2362.32
+Vegetables,Cucumber,965.77
+Vegetables,Lettuce,535.095
+Vegetables,Mushroom,87.2
+Vegetables,Onion,1146.25
+Vegetables,Snap Peas,232.14
+Vegetables,Bell Pepper,766.8
+Vegetables,Potatoe,1783.08
+Vegetables,Sweet Potatoe,638.4
+Vegetables,Tomatoe,1072.75
+Dairy,Beverage Milk,51735.1
+Dairy,Yogurt,9301.93
+Dairy,Fluid Cream Products,14469.43
+Dairy,Cheese,55955.76
+Dairy,Frozen Dairy Products,14545.98
+Flour and Cereal Products,Wheat Flour,77093.52
+Flour and Cereal Products,Rye Flour,890.78
+Flour and Cereal Products,"Rice, milled",17605.52
+Flour and Cereal Products,Corn Products,8757.45
+Flour and Cereal Products,Oat Products,3968.64
+Flour and Cereal Products,Barley Products,367.04
+Meats,Beef,251756.8502
+Meats,Veal,1299.949313
+Meats,Lamb and mutton,2857.6296
+Meats,Pork,100339.177
+Meats,Chicken,109859.9824
+Meats,Turkey,11552.76144
+Meats,Eggs,21042
+Fats and Oils,Butter and Margarine,16599
+Fats and Oils,Shortening and Cooking Oil,146998.68
+Sweeteners,Sugar,48787.2
+Sweeteners,High Fructose Corn Syrup,38487.68
+Beverages,Tea,5040
+Beverages,Coffee,10649.6
+Beverages,Fruit Juice,2775
+Beverages,Soft Drink ,4191.2
+Beverages,Beer,4200.88032
+Beverages,Wine,6728.42
+Apparel,Clothing,151.925
+Apparel,Jeans,5715
+Apparel,Khakis,1425.6
+Electronics,Smart Phone,13.8
+Electronics,Laptop,16.675
+Electronics,Tablet,13.6
+Hygiene Products,Toothpaste,1.0642
+Entertainment/ Recreation,Sports Events,346.698
+Entertainment/ Recreation,Music Events,203.94
+Transportation,Natural Gas,4.21617571
+Transportation,Aviation Gasoline ,18.85318551
+Transportation,Distillate Fuel Oil (Diesel),3281.597808
+Transportation,Motor Gasoline,15359.34745
+Transportation,Electricity,3335.044935
+Transportation,Vehicle Related,1572.375
+Indirect Household,Space Heating,3041.739891
+Indirect Household,SH - Natural Gas,50.10455837
+Indirect Household,SH - Propane,68.05490746
+Indirect Household,SH - Electricity,2923.580425
+Indirect Household,Water Heating,5267.488052
+Indirect Household,WH - Natural Gas,37.23931424
+Indirect Household,WH - Propane,33.91910034
+Indirect Household,WH - Electricity,5196.329638
+Indirect Household,Air Conditioning,3573.202433
+Indirect Household,AC - Electricity,3573.202433
+Indirect Household,Refrigerator,2923.529263
+Indirect Household,Fridge - Electricity,2923.529263
+Indirect Household,Other,12813.8819
+Indirect Household,Other - Natural Gas,24.60565261
+Indirect Household,Other - Propane,363.1074712
+Indirect Household,Other - Electricity,12426.16878
+Direct Use,Residential,270969.6623
+Direct Use,Commercial,48501.18481

@@ -1,0 +1,525 @@
+{
+  "name": "flare", 
+  "children": [
+    {
+      "name": "Apparel", 
+      "children": [
+        {
+          "name": "Clothing", 
+          "value": 151, 
+          "size": 151
+        }, 
+        {
+          "name": "Jeans", 
+          "value": 5715, 
+          "size": 5715
+        }, 
+        {
+          "name": "Khakis", 
+          "value": 1425, 
+          "size": 1425
+        }
+      ]
+    }, 
+    {
+      "name": "Beverages", 
+      "children": [
+        {
+          "name": "Beer", 
+          "value": 4200, 
+          "size": 4200
+        }, 
+        {
+          "name": "Coffee", 
+          "value": 10649, 
+          "size": 10649
+        }, 
+        {
+          "name": "Fruit Juice", 
+          "value": 2775, 
+          "size": 2775
+        }, 
+        {
+          "name": "Soft Drink ", 
+          "value": 4191, 
+          "size": 4191
+        }, 
+        {
+          "name": "Tea", 
+          "value": 5040, 
+          "size": 5040
+        }, 
+        {
+          "name": "Wine", 
+          "value": 6728, 
+          "size": 6728
+        }
+      ]
+    }, 
+    {
+      "name": "Dairy", 
+      "children": [
+        {
+          "name": "Beverage Milk", 
+          "value": 51735, 
+          "size": 51735
+        }, 
+        {
+          "name": "Cheese", 
+          "value": 55955, 
+          "size": 55955
+        }, 
+        {
+          "name": "Fluid Cream Products", 
+          "value": 14469, 
+          "size": 14469
+        }, 
+        {
+          "name": "Frozen Dairy Products", 
+          "value": 14545, 
+          "size": 14545
+        }, 
+        {
+          "name": "Yogurt", 
+          "value": 9301, 
+          "size": 9301
+        }
+      ]
+    }, 
+    {
+      "name": "Direct Use", 
+      "children": [
+        {
+          "name": "Commercial", 
+          "value": 48501, 
+          "size": 48501
+        }, 
+        {
+          "name": "Residential", 
+          "value": 270969, 
+          "size": 270969
+        }
+      ]
+    }, 
+    {
+      "name": "Electronics", 
+      "children": [
+        {
+          "name": "Laptop", 
+          "value": 16, 
+          "size": 16
+        }, 
+        {
+          "name": "Smart Phone", 
+          "value": 13, 
+          "size": 13
+        }, 
+        {
+          "name": "Tablet", 
+          "value": 13, 
+          "size": 13
+        }
+      ]
+    }, 
+    {
+      "name": "Entertainment/ Recreation", 
+      "children": [
+        {
+          "name": "Music Events", 
+          "value": 203, 
+          "size": 203
+        }, 
+        {
+          "name": "Sports Events", 
+          "value": 346, 
+          "size": 346
+        }
+      ]
+    }, 
+    {
+      "name": "Fats and Oils", 
+      "children": [
+        {
+          "name": "Butter and Margarine", 
+          "value": 16599, 
+          "size": 16599
+        }, 
+        {
+          "name": "Shortening and Cooking Oil", 
+          "value": 146998, 
+          "size": 146998
+        }
+      ]
+    }, 
+    {
+      "name": "Flour and Cereal Products", 
+      "children": [
+        {
+          "name": "Barley Products", 
+          "value": 367, 
+          "size": 367
+        }, 
+        {
+          "name": "Corn Products", 
+          "value": 8757, 
+          "size": 8757
+        }, 
+        {
+          "name": "Oat Products", 
+          "value": 3968, 
+          "size": 3968
+        }, 
+        {
+          "name": "Rice, milled", 
+          "value": 17605, 
+          "size": 17605
+        }, 
+        {
+          "name": "Rye Flour", 
+          "value": 890, 
+          "size": 890
+        }, 
+        {
+          "name": "Wheat Flour", 
+          "value": 77093, 
+          "size": 77093
+        }
+      ]
+    }, 
+    {
+      "name": "Fruits", 
+      "children": [
+        {
+          "name": "Apples", 
+          "value": 2961, 
+          "size": 2961
+        }, 
+        {
+          "name": "Bananas", 
+          "value": 6137, 
+          "size": 6137
+        }, 
+        {
+          "name": "Cantalopes", 
+          "value": 909, 
+          "size": 909
+        }, 
+        {
+          "name": "Grapefruit", 
+          "value": 207, 
+          "size": 207
+        }, 
+        {
+          "name": "Grapes", 
+          "value": 1460, 
+          "size": 1460
+        }, 
+        {
+          "name": "Oranges", 
+          "value": 726, 
+          "size": 726
+        }, 
+        {
+          "name": "Peaches and Nectarines", 
+          "value": 1098, 
+          "size": 1098
+        }, 
+        {
+          "name": "Pears", 
+          "value": 459, 
+          "size": 459
+        }, 
+        {
+          "name": "Pinapples", 
+          "value": 161, 
+          "size": 161
+        }, 
+        {
+          "name": "Plums and Prunes", 
+          "value": 499, 
+          "size": 499
+        }, 
+        {
+          "name": "Strawberries", 
+          "value": 349, 
+          "size": 349
+        }, 
+        {
+          "name": "Watermelons", 
+          "value": 1499, 
+          "size": 1499
+        }
+      ]
+    }, 
+    {
+      "name": "Hygiene Products", 
+      "children": [
+        {
+          "name": "Toothpaste", 
+          "value": 1, 
+          "size": 1
+        }
+      ]
+    }, 
+    {
+      "name": "Indirect Household", 
+      "children": [
+        {
+          "name": "AC - Electricity", 
+          "value": 3573, 
+          "size": 3573
+        }, 
+        {
+          "name": "Air Conditioning", 
+          "value": 3573, 
+          "size": 3573
+        }, 
+        {
+          "name": "Fridge - Electricity", 
+          "value": 2923, 
+          "size": 2923
+        }, 
+        {
+          "name": "Other", 
+          "value": 12813, 
+          "size": 12813
+        }, 
+        {
+          "name": "Other - Electricity", 
+          "value": 12426, 
+          "size": 12426
+        }, 
+        {
+          "name": "Other - Natural Gas", 
+          "value": 24, 
+          "size": 24
+        }, 
+        {
+          "name": "Other - Propane", 
+          "value": 363, 
+          "size": 363
+        }, 
+        {
+          "name": "Refrigerator", 
+          "value": 2923, 
+          "size": 2923
+        }, 
+        {
+          "name": "SH - Electricity", 
+          "value": 2923, 
+          "size": 2923
+        }, 
+        {
+          "name": "SH - Natural Gas", 
+          "value": 50, 
+          "size": 50
+        }, 
+        {
+          "name": "SH - Propane", 
+          "value": 68, 
+          "size": 68
+        }, 
+        {
+          "name": "Space Heating", 
+          "value": 3041, 
+          "size": 3041
+        }, 
+        {
+          "name": "WH - Electricity", 
+          "value": 5196, 
+          "size": 5196
+        }, 
+        {
+          "name": "WH - Natural Gas", 
+          "value": 37, 
+          "size": 37
+        }, 
+        {
+          "name": "WH - Propane", 
+          "value": 33, 
+          "size": 33
+        }, 
+        {
+          "name": "Water Heating", 
+          "value": 5267, 
+          "size": 5267
+        }
+      ]
+    }, 
+    {
+      "name": "Meats", 
+      "children": [
+        {
+          "name": "Beef", 
+          "value": 251756, 
+          "size": 251756
+        }, 
+        {
+          "name": "Chicken", 
+          "value": 109859, 
+          "size": 109859
+        }, 
+        {
+          "name": "Eggs", 
+          "value": 21042, 
+          "size": 21042
+        }, 
+        {
+          "name": "Lamb and mutton", 
+          "value": 2857, 
+          "size": 2857
+        }, 
+        {
+          "name": "Pork", 
+          "value": 100339, 
+          "size": 100339
+        }, 
+        {
+          "name": "Turkey", 
+          "value": 11552, 
+          "size": 11552
+        }, 
+        {
+          "name": "Veal", 
+          "value": 1299, 
+          "size": 1299
+        }
+      ]
+    }, 
+    {
+      "name": "Sweeteners", 
+      "children": [
+        {
+          "name": "High Fructose Corn Syrup", 
+          "value": 38487, 
+          "size": 38487
+        }, 
+        {
+          "name": "Sugar", 
+          "value": 48787, 
+          "size": 48787
+        }
+      ]
+    }, 
+    {
+      "name": "Transportation", 
+      "children": [
+        {
+          "name": "Aviation Gasoline ", 
+          "value": 18, 
+          "size": 18
+        }, 
+        {
+          "name": "Distillate Fuel Oil (Diesel)", 
+          "value": 3281, 
+          "size": 3281
+        }, 
+        {
+          "name": "Electricity", 
+          "value": 3335, 
+          "size": 3335
+        }, 
+        {
+          "name": "Motor Gasoline", 
+          "value": 15359, 
+          "size": 15359
+        }, 
+        {
+          "name": "Natural Gas", 
+          "value": 4, 
+          "size": 4
+        }, 
+        {
+          "name": "Vehicle Related", 
+          "value": 1572, 
+          "size": 1572
+        }
+      ]
+    }, 
+    {
+      "name": "Vegetables", 
+      "children": [
+        {
+          "name": "Asparagus", 
+          "value": 1323, 
+          "size": 1323
+        }, 
+        {
+          "name": "Bell Pepper", 
+          "value": 766, 
+          "size": 766
+        }, 
+        {
+          "name": "Broccoli", 
+          "value": 648, 
+          "size": 648
+        }, 
+        {
+          "name": "Cabbage", 
+          "value": 228, 
+          "size": 228
+        }, 
+        {
+          "name": "Carrots", 
+          "value": 275, 
+          "size": 275
+        }, 
+        {
+          "name": "Cauliflower", 
+          "value": 159, 
+          "size": 159
+        }, 
+        {
+          "name": "Celery", 
+          "value": 227, 
+          "size": 227
+        }, 
+        {
+          "name": "Corn", 
+          "value": 2362, 
+          "size": 2362
+        }, 
+        {
+          "name": "Cucumber", 
+          "value": 965, 
+          "size": 965
+        }, 
+        {
+          "name": "Lettuce", 
+          "value": 535, 
+          "size": 535
+        }, 
+        {
+          "name": "Mushroom", 
+          "value": 87, 
+          "size": 87
+        }, 
+        {
+          "name": "Onion", 
+          "value": 1146, 
+          "size": 1146
+        }, 
+        {
+          "name": "Potatoe", 
+          "value": 1783, 
+          "size": 1783
+        }, 
+        {
+          "name": "Snap Peas", 
+          "value": 232, 
+          "size": 232
+        }, 
+        {
+          "name": "Sweet Potatoe", 
+          "value": 638, 
+          "size": 638
+        }, 
+        {
+          "name": "Tomatoe", 
+          "value": 1072, 
+          "size": 1072
+        }
+      ]
+    }
+  ]
+}
