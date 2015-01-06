@@ -103,7 +103,7 @@ form {
 
 var diameter = 800,
     format = d3.format(",d"),
-    color = d3.scale.category10();
+    color = d3.scale.category20b();
 
 var bubble = d3.layout.pack()
     .sort(null)
@@ -129,6 +129,7 @@ d3.json("ca_per_capita_consumption.json", function(error, root) {
   node.append("circle")
       .attr("r", function(d) { return d.r; })
       .style("fill", function(d) { return color(d.packageName); })
+      .attr("class","default_circle");
       
 
   node.append("text")

@@ -4,8 +4,44 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"response"
+			],
+			[
+				"pa",
+				"packageName"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"cs",
+				"csv_to_flare"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"t",
+				"target	Attr"
+			],
+			[
 				"font",
-				"font-weight"
+				"font-size"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"margin",
+				"margin-top"
 			],
 			[
 				"mag",
@@ -14,10 +50,6 @@
 			[
 				"text",
 				"text-align"
-			],
-			[
-				"pa",
-				"padding-top"
 			],
 			[
 				"padd",
@@ -42,10 +74,6 @@
 			[
 				"tran",
 				"transform"
-			],
-			[
-				"t",
-				"tractor"
 			],
 			[
 				"get",
@@ -126,10 +154,6 @@
 			[
 				"stro",
 				"stroke-dasharray"
-			],
-			[
-				"on",
-				"oneortwo"
 			],
 			[
 				"p",
@@ -383,31 +407,40 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 13928,
+				"buffer_size": 18427,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "setosa.css",
+			"file": "processing/watter_bubble.html",
 			"settings":
 			{
-				"buffer_size": 4829,
+				"buffer_size": 4585,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "var mapApp = angular.module('mapComponentsApp', ['ngSanitize']);\nconsole.log(\"yes\")\nmapApp.directive('myMap', function ($compile, $window, $sce, $parse) {\n    return {\n      controller: function ($scope) {\n    \n        this.registerMap = function (myMap) {\n          var center = myMap.getCenter(),\n            latitude = center.lat(),\n            longitude = center.lng();\n\n          map = myMap;\n          $scope.latitude = Math.round(latitude*1000)/1000;\n          $scope.longitude = Math.round(longitude*1000)/1000;\n        };\n\n\n      },\n      link: function (scope, elem, attrs, ctrl) {\n        var mapOptions, latitude = attrs.latitude,longitude = attrs.longitude, controlTemplate,controlElem, map, markers = [],image_green = \"assets/img/markers/GHGgo_logo_small_green.png\", image_red = \"assets/img/markers/GHGgo_logo_small_red.png\",polyline = null;\n\n     \n        function collectdata(response, scope){\n          //Initialize variables\n          line = [], data = [];\n          var ourRoute = response.routes[0], index = -1;;\n          scope._dispatch = [];\n\n          //Calculate emissions along route\n          var zLen = ourRoute.legs.length;\n          for (var z = 0; z < zLen; z++) {\n            totdist = 0\n            for (var j = 0; j < ourRoute.legs[z].steps.length; j++) {\n              index = index + 1;\n              var path = [];  \n              for (var i = 0; i < ourRoute.legs[z].steps[j].path.length; i++) {\n                path.push(ourRoute.legs[z].steps[j].path[i]);\n              }\n\n              var distance = ourRoute.legs[z].steps[j].distance.value;\n              totdist = totdist + distance; \n              if(typeof response.routes[0].legs[z].steps[j] != 'undefined' ){\n                var vel = distance/response.routes[0].legs[z].steps[j].duration.value;\n\n                if(vel < 20/2.23694){\n                  var colorline = \"#ea0c31\";\n                }else if(vel >= 20/2.23694 && vel < 30/2.23694) {\n                  var colorline = \"#fb9401\";\n                }else if(vel >= 30/2.23694 && vel < 40/2.23694) {\n                  var colorline = \"#ffcc00\";\n                }else{\n                  var colorline = \"#00cc33\";\n                }\n\n                polyline = new google.maps.Polyline({ path: path, strokeColor: colorline, map: map });\n                line.push(polyline);\n\n                var GHGcalced = VehicleEmissions(scope, vel,z);\n                data.push([totdist/1000,GHGcalced, z])\n\n                if(z == 0) {\n                  scope.Dispatch = Math.round(totdist/100)/10+\" km\";\n                  if(j==0)scope._dispatch.push({step: \"-\", description: $sce.trustAsHtml(\"<span style='color:#443695;'><b>Truck is dispatched to pickup.</b></span>\")})\n                }\n                if(z == 1) {\n                  scope.Delivery = Math.round(totdist/100)/10+\" km\";\n                  if(j==0)scope._dispatch.push({step: \"-\", description: $sce.trustAsHtml(\"<span style='color:#443695;'><b>Truck delivers goods.</b></span>\")})\n                }\n                if(z == 2) {\n                  scope.Backhaul = Math.round(totdist/100)/10+\" km\";\n                  if(j==0)scope._dispatch.push({step: \"-\", description: $sce.trustAsHtml(\"<span style='color:#443695;'><b>Truck returns from delivery.</b></span>\")})\n                }\n\n                scope._dispatch.push({step: $sce.trustAsHtml(\"<span>\"+(j+1)+\"</span>\"), description: $sce.trustAsHtml(response.routes[0].legs[z].steps[j].instructions)+\", \"+(Math.round(distance/100)/10)+' km', latlng: ourRoute.legs[z].steps[j].start_location, id: index, GHG: $sce.trustAsHtml(\"<span class='highlight' style='background-color:\"+colorline+\"'> \"+GHGcalced+\"</span>\")})\n                \n                scope.data = data;\n                scope.$apply()\n\n              }\n            }\n          }       \n        }\n\n        function calcRoute(scope) {\n          var modeSelect = google.maps.DirectionsTravelMode.DRIVING,\n              origin = markers[0].getPosition(),\n              destination = markers[markers.length - 1].getPosition(),\n              waypoints = [];\n\n          for (var i = 1; i < markers.length - 1; i++) {\n            waypoints.push({\n              location: markers[i].getPosition(),\n              stopover: true\n            });\n          }\n          \n          var request = { origin: origin, destination: destination, waypoints: waypoints, provideRouteAlternatives: false, durationInTraffic: true,travelMode: modeSelect\n          };\n           \n          directionsService.route(request, function(response, status) {\n            if (status == google.maps.DirectionsStatus.OK) {\n              if (polyline) {\n                for (i=0; i<line.length; i++){                           \n                  line[i].setMap(null);\n                }\n              }\n            collectdata(response, scope);\n            } else if (status == google.maps.DirectionsStatus.ZERO_RESULTS) {\n              alert(\"Could not find a route between these points\");\n            } else {\n              alert(\"Directions request failed\");\n            } \n          });\n        } \n\n        function addMarker(latlng, scope){\n          // Update Marker\n          var markSetup = {position: latlng, map: map, draggable: true}\n          if(markers.length ==0||markers.length ==3){ markSetup[\"icon\"] = image_red;\n          }else{ markSetup[\"icon\"] = image_green;}\n          marker = new google.maps.Marker(markSetup)\n          \n          // Add listener\n          google.maps.event.addListener(marker, 'dragend', function(){calcRoute(scope)});\n          \n          markers.push(marker);\n\n          //if (markers.length>1) calcRoute(scope)\n        }\n\n        function Autocomplete(scope){\n           var autocomplete = new google.maps.places.Autocomplete($(\"#do_address\")[0], {});\n            google.maps.event.addListener(autocomplete, 'place_changed', function() {\n                var place = autocomplete.getPlace();\n                scope.location = place.geometry.location.lat() + ',' + place.geometry.location.lng();\n                scope.$apply();\n\n                latlng = place.geometry.location;\n                addMarker(latlng, scope)\n                if (markers.length > 0) {\n                      var bounds = new google.maps.LatLngBounds();\n                      for (var i in markers) {\n                        bounds.extend(markers[i].getPosition());\n                      }\n                      map.fitBounds(bounds);\n                      if (map.getZoom() > 10) map.setZoom(10); \n                } else {\n                      map.fitBounds(results[0].geometry.viewport);\n                      if (map.getZoom() > 10) map.setZoom(10); \n                }\n            });\n        }\n\n        scope.reset = function(){\n            if (polyline) {\n                for (i=0; i<line.length; i++){                           \n                line[i].setMap(null); \n            }\n            }  \n            for (var i in markers) {\n              markers[i].setMap(null);\n            }\n            scope.position = \"At what location will your truck start? Type here or click the map.\"\n            markers = []\n            scope.Dispatch = \"\";\n            scope.Delivery = \"\";\n            scope.Backhaul = \"\";\n            scope._dispatch = []\n        }\n\n        scope.zoomInto = function(value){\n          map.setCenter(value.latlng)\n          map.panBy(40,0)\n          map.setZoom(13)\n          map.setTilt(40)\n          line[value.id].setOptions({strokeWeight: 10})\n          setInterval(function () {line[value.id].setOptions({strokeWeight: 2})}, 3000);\n        }\n\n\n        // parsing latLong or setting default location\n        latitude = 37.774;\n        longitude = -122.308;\n\n        mapOptions = { zoom: 10, center: new google.maps.LatLng(latitude, longitude), disableDefaultUI: true, zoomControl: true, mapTyeControl:true, zoomControlOptions: { style: google.maps.ZoomControlStyle.SMALL, position: google.maps.ControlPosition.TOP_LEFT }, mapTypeId: google.maps.MapTypeId.ROADMAP, styles: style_truck\n        };\n\n        map = new google.maps.Map(elem[0], mapOptions);\n        directionsService = new google.maps.DirectionsService();\n        geocoderService = new google.maps.Geocoder();\n    \n        ctrl.registerMap(map);\n      \n    \n        // Add listeners\n        google.maps.event.addListener(map, 'mousemove', function(e){ \n          if (e.latLng.k !== scope.latitude){\n            scope.latitude = Math.round(e.latLng.k*1000)/1000\n            scope.longitude = Math.round(e.latLng.B*1000)/1000\n            scope.$apply()\n          } \n        });\n\n        google.maps.event.addListener(map, 'click', function(e){ \n          if(markers.length == 0){\n            scope.position = \"At what location will you load your truck?\"\n          } else if(markers.length == 1) {\n            scope.position = \"At what location will you complete your delivery?\"\n          }else if(markers.length == 2){\n            scope.position = \"At what location will you return to once the delivery is complete?\"\n          }else {\n            scope.position = \"Trip complete.\"\n          }\n          scope.$apply();\n\n          if(markers.length <4) addMarker(e.latLng, scope)\n        });\n      }\n    };\n  }); ",
+			"settings":
+			{
+				"buffer_size": 9200,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "processing/csv_to_flare.py",
+			"settings":
+			{
+				"buffer_size": 887,
+				"line_ending": "Unix",
+				"name": "import csv"
 			}
 		},
 		{
 			"file": "Water_main.js",
 			"settings":
 			{
-				"buffer_size": 1147,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "popover-html-unsafe-popup.html",
-			"settings":
-			{
-				"buffer_size": 296,
+				"buffer_size": 5400,
 				"line_ending": "Unix"
 			}
 		}
@@ -447,10 +480,20 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/Mike/Explained_Visually/WaterFacts"
+		"/Users/Mike/Explained_Visually/WaterFacts",
+		"/Users/Mike/Explained_Visually/WaterFacts/img",
+		"/Users/Mike/Explained_Visually/WaterFacts/processing"
 	],
 	"file_history":
 	[
+		"/Users/Mike/Explained_Visually/WaterFacts/popover-html-unsafe-popup.html",
+		"/Users/Mike/Explained_Visually/WaterFacts/setosa.css",
+		"/Users/Mike/Desktop/flare.json",
+		"/Users/Mike/Explained_Visually/WaterFacts/processing/watter_bubble.html",
+		"/Users/Mike/Explained_Visually/WaterFacts/processing/ca_per_capita_consumption.csv",
+		"/Users/Mike/Explained_Visually/WaterFacts/map.js",
+		"/Users/Mike/lecturejs/lecture.css",
+		"/Users/Mike/Explained_Visually/WaterFacts/index.html",
 		"/Users/Mike/Downloads/gem-v1.0-matlab/drive_cycles/tocsv.py",
 		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/fuel_model.py",
 		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/motion.py",
@@ -570,15 +613,7 @@
 		"/Users/Mike/Dropbox/Doctoral_Thesis/Work_Product/D3/Graphs/LCA_EF_error/stylesheets/script/test.js",
 		"/Users/Mike/ce11gsi/main.py",
 		"/Users/Mike/Dropbox/Teaching/Classes/CE11/d3/ce11_home2.html",
-		"/Users/Mike/Dropbox/Teaching/Vudlab/Gadgil Group 2014/stylesheets/preview.html",
-		"/Users/Mike/Dropbox/Teaching/Classes/CE11/d3/energy_efficiency.html",
-		"/Users/Mike/Dropbox/Teaching/Classes/CE11/d3/economics.html",
-		"/Users/Mike/Dropbox/Teaching/Classes/CE11/d3/risk.html",
-		"/Users/Mike/Dropbox/Teaching/Classes/CE11/d3/stylesheets/energy_efficiency.html",
-		"/Users/Mike/Dropbox/Teaching/Classes/CE11/d3/buildings.html",
-		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Work Product/Figures/Graphs/GEM PERE/stylesheets/brush_route_perkm.html",
-		"/Users/Mike/Dropbox/Doctoral_Thesis/Work_Product/D3/Graphs/Jensen's Inequality/stylesheets/scripts/linechart.js",
-		"/Users/Mike/Dropbox/Doctoral_Thesis/Work_Product/D3/Graphs/Jensen's Inequality/stylesheets/styles/slider.css"
+		"/Users/Mike/Dropbox/Teaching/Vudlab/Gadgil Group 2014/stylesheets/preview.html"
 	],
 	"find":
 	{
@@ -596,6 +631,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"templ",
+			"{{",
+			"console",
+			"dispatch",
+			"_dispatch",
+			"poly",
+			"direction",
+			"markers",
+			"marker",
+			"ctrl",
+			"mousover",
+			"<div class='centered'>",
+			"<div class=\"well\">",
+			"jpg\" ></p>",
+			"questionbox",
 			"https://raw.githubusercontent.com/mtaptich/WaterFacts/gh-pages/PNGs/Slide",
 			"gh-page",
 			"PNGs/slide",
@@ -708,22 +758,7 @@
 			"PC_PS_EV",
 			"tellToQuit",
 			"writetofile",
-			"addregiondata",
-			"fuel",
-			"coal_list",
-			"coal_location",
-			"	",
-			"th PM filter', 9.0] ",
-			"ro I+II', 40]",
-			" V', 40]",
-			"[ 'Motorcycles 4-stroke'",
-			"\"MC\":",
-			"'Pass.car diesel with PM filter',",
-			"\"PC\":",
-			"II',",
-			"\"BUS\": ",
-			"'Bus Euro I+II',",
-			"\"BUS\": "
+			"addregiondata"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -731,6 +766,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"<div class='centered well'>",
+			"<div class=\"questionbox\">",
+			"png\" ></p>",
+			"well",
 			"https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide",
 			"gh-pages",
 			"https://raw.githubusercontent.com/mtaptich/WaterFacts/gh-page/PNGs/Slide",
@@ -849,15 +888,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13928,
+						"buffer_size": 18427,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4841,
-								4841
+								15594,
+								15594
 							]
 						],
 						"settings":
@@ -867,7 +906,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2998.0,
+						"translation.y": 8982.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -875,29 +914,29 @@
 				},
 				{
 					"buffer": 1,
-					"file": "setosa.css",
+					"file": "processing/watter_bubble.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4829,
+						"buffer_size": 4585,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								167,
-								151
+								1819,
+								1819
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3186.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -905,19 +944,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "Water_main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1147,
+						"buffer_size": 9200,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1019,
-								1029
+								678,
+								683
 							]
 						],
 						"settings":
@@ -926,8 +964,8 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 86.0,
+						"translation.x": 0.0,
+						"translation.y": 3430.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -935,27 +973,58 @@
 				},
 				{
 					"buffer": 3,
-					"file": "popover-html-unsafe-popup.html",
+					"file": "processing/csv_to_flare.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 296,
+						"buffer_size": 887,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								296,
-								296
+								852,
+								827
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"auto_name": "import csv",
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Water_main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5079,
+								5079
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2024.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -997,7 +1066,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 548.0
+		"height": 173.0
 	},
 	"output.find_results":
 	{
@@ -1045,7 +1114,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 194.0,
+	"side_bar_width": 302.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
